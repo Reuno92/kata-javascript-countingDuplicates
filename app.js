@@ -3,6 +3,8 @@ let countingDuplicates = function(string) {
 	let nTimesSimilar = {};
 
 	let arr = [];
+
+	// if not a string else throw error
 	if (typeof string === 'string') {
 		arr = string.toLowerCase().split('');
 
@@ -19,15 +21,10 @@ let countingDuplicates = function(string) {
 			nTimesSimilar[num] = nTimesSimilar[num] ? nTimesSimilar[num] + 1 : 1;
 		}
 
-		if (Object.keys(nTimesSimilar).length === 0) {
-			return 0
-		} else {
-			return Object.keys(nTimesSimilar).length
-		}
+		return Object.keys(nTimesSimilar).length
 	} else {
 		throw Error `It's not a string`;
 	}
-
 };
 
 let someLetter = function(arr, char) {
